@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Pipeline NLP con OpenCode</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',    // Azul marino (institucional)
+                            light: '#3b82f6',   // Azul claro (tecnológico)
+                            red: '#e11d48',     // Rojo (acento)
+                            dark: '#0f172a',    // Oscuro (textos principales)
+                            gray: '#f8fafc'     // Gris muy claro (fondo)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #e2e8f0; }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="py-10 text-gray-800 antialiased font-sans flex justify-center">
+
+    <!-- Contenedor Principal (Formato Infografía Vertical) -->
+    <div class="max-w-4xl w-full bg-white shadow-2xl rounded-3xl overflow-hidden relative">
+
+        <!-- ENCABEZADO PRINCIPAL -->
+        <header class="bg-brand-dark text-white p-10 relative overflow-hidden text-center">
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+            <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-brand-red rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <p class="text-brand-light font-bold tracking-widest uppercase text-sm mb-2">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i>Universidad Andina del Cusco
+                </p>
+                <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    Construcción de un <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Pipeline NLP</span>
+                </h1>
+                <p class="text-xl font-light text-gray-300 mb-6 font-heading">
+                    con OpenCode
+                </p>
+
+                <!-- Tarjeta de Metadatos -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 inline-flex flex-wrap justify-center gap-6 border border-white/20 text-sm">
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase mb-1">Docente</span>
+                        <span class="font-semibold">Mg. Ing. Hugo Espetia H.</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase mb-1">Asignatura</span>
+                        <span class="font-semibold">Inteligencia Artificial</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-400 text-xs uppercase mb-1">Año</span>
+                        <span class="font-semibold">2026</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECCIÓN 1: DECISIONES TÉCNICAS (Tarjetas) -->
+        <section class="p-8 md:p-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-brand-blue text-white flex items-center justify-center text-xl shadow-lg">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h2 class="font-heading text-3xl font-bold text-brand-dark">Decisiones Técnicas</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tarjeta 1 -->
+                <div class="bg-brand-gray border border-slate-200 rounded-2xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-brain text-4xl text-brand-light mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Modelo Principal</h3>
+                    <p class="text-sm text-gray-600 bg-white border border-gray-200 rounded px-2 py-1 inline-block font-mono">es_core_news_sm</p>
+                    <p class="text-xs text-gray-500 mt-3">Usado para tokenización, lemas, POS y stopwords en español mediante spaCy.</p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-brand-gray border border-slate-200 rounded-2xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-code text-4xl text-brand-red mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Arquitectura</h3>
+                    <p class="text-sm font-semibold text-gray-700">Código Lineal</p>
+                    <p class="text-xs text-gray-500 mt-3">Se mantuvo corto y directo para facilitar la sustentación oral del proyecto.</p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-brand-gray border border-slate-200 rounded-2xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-shield-halved text-4xl text-brand-blue mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Manejo de Errores</h3>
+                    <p class="text-sm font-semibold text-gray-700">Instalación Asistida</p>
+                    <p class="text-xs text-gray-500 mt-3">Si spaCy no está instalado, el script indica el comando exacto necesario.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 mx-12">
+
+        <!-- SECCIÓN 2: CORRECCIONES APLICADAS (Lista Visual) -->
+        <section class="p-8 md:p-12 bg-slate-50">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-brand-red text-white flex items-center justify-center text-xl shadow-lg">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h2 class="font-heading text-3xl font-bold text-brand-dark">Correcciones Aplicadas</h2>
+            </div>
+            
+            <p class="text-gray-600 mb-8 max-w-2xl text-sm">El pipeline perfecciona el análisis de texto implementando las siguientes correcciones gramaticales y semánticas:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-brand-light mt-1"><i class="fa-solid fa-check-circle text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-brand-dark">Tiempos Verbales</h4>
+                        <p class="text-sm text-gray-500">Basado en el estándar EAGLES.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-brand-light mt-1"><i class="fa-solid fa-check-circle text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-brand-dark">Lematización</h4>
+                        <p class="text-sm text-gray-500">Normalización precisa de adjetivos.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-brand-light mt-1"><i class="fa-solid fa-check-circle text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-brand-dark">Artículos Indefinidos</h4>
+                        <p class="text-sm text-gray-500">Clasificación y detección correcta.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-brand-light mt-1"><i class="fa-solid fa-check-circle text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-brand-dark">Palabras Ambiguas</h4>
+                        <p class="text-sm text-gray-500">Resolución semántica según contexto.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 md:col-span-2">
+                    <div class="text-brand-light mt-1"><i class="fa-solid fa-check-circle text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-brand-dark">Locuciones</h4>
+                        <p class="text-sm text-gray-500">Identificación de expresiones compuestas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: INSTRUCCIONES DE EJECUCIÓN (Terminal UI) -->
+        <section class="p-8 md:p-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-brand-dark text-white flex items-center justify-center text-xl shadow-lg">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <h2 class="font-heading text-3xl font-bold text-brand-dark">Modos de Ejecución</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Terminal UI -->
+                <div class="bg-gray-900 rounded-xl overflow-hidden shadow-2xl flex flex-col">
+                    <div class="bg-gray-800 px-4 py-2 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-gray-400 text-xs ml-2 font-mono">bash - configuración</span>
+                    </div>
+                    <div class="p-4 font-mono text-sm text-green-400 leading-relaxed overflow-x-auto">
+                        <span class="text-gray-400"># 1. Entorno Virtual</span><br>
+                        $ python -m venv .venv<br>
+                        $ .venv\Scripts\Activate.ps1<br>
+                        $ pip install -r requirements.txt<br>
+                        $ python -m spacy download es_core_news_lg<br><br>
+                        
+                        <span class="text-gray-400"># 2. Despliegue Cloud</span><br>
+                        $ cat Procfile<br>
+                        <span class="text-white">web: gunicorn app:app</span>
+                    </div>
+                </div>
+
+                <!-- Modos -->
+                <div class="flex flex-col gap-4">
+                    <div class="border-l-4 border-brand-light pl-4">
+                        <h4 class="font-bold text-brand-dark flex items-center gap-2">
+                            <i class="fa-solid fa-globe text-brand-light"></i> Ejecución Web (Recomendada)
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-1 mb-2">Inicia el servidor Flask y la interfaz gráfica completa.</p>
+                        <code class="bg-gray-100 text-brand-dark px-2 py-1 rounded text-sm font-mono block">python app.py</code>
+                        <span class="text-xs text-brand-light block mt-1">→ Abre en navegador: http://localhost:5000</span>
+                    </div>
+                    
+                    <div class="border-l-4 border-brand-red pl-4 mt-2">
+                        <h4 class="font-bold text-brand-dark flex items-center gap-2">
+                            <i class="fa-solid fa-code-branch text-brand-red"></i> Ejecución CLI (Terminal)
+                        </h4>
+                        <p class="text-sm text-gray-600 mt-1 mb-2">Para pruebas rápidas y procesamiento batch desde consola.</p>
+                        <code class="bg-gray-100 text-brand-dark px-2 py-1 rounded text-sm font-mono block mb-1">python pipeline_nlp.py</code>
+                        <code class="bg-gray-100 text-brand-dark px-2 py-1 rounded text-sm font-mono block">python pipeline_nlp.py --text "Tu texto aquí"</code>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: ESTRUCTURA DEL PROYECTO (Diagrama) -->
+        <section class="p-8 md:p-12 bg-brand-dark text-white text-center">
+            <h2 class="font-heading text-2xl font-bold mb-8">Componentes Entregables</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white/10 px-6 py-4 rounded-lg flex items-center gap-3 backdrop-blur-sm border border-white/20">
+                    <i class="fa-regular fa-file-lines text-2xl text-blue-300"></i>
+                    <div class="text-left">
+                        <span class="block font-bold">salida_terminal.txt</span>
+                        <span class="text-xs text-gray-300">Prueba de procesamiento</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 px-6 py-4 rounded-lg flex items-center gap-3 backdrop-blur-sm border border-white/20">
+                    <i class="fa-solid fa-robot text-2xl text-cyan-300"></i>
+                    <div class="text-left">
+                        <span class="block font-bold">OpenCode Historial</span>
+                        <span class="text-xs text-gray-300">Sesión y prompts</span>
+                    </div>
+                </div>
+                <div class="bg-white/10 px-6 py-4 rounded-lg flex items-center gap-3 backdrop-blur-sm border border-white/20">
+                    <i class="fa-solid fa-file-pdf text-2xl text-red-400"></i>
+                    <div class="text-left">
+                        <span class="block font-bold">Informe PDF</span>
+                        <span class="text-xs text-gray-300">Interacción agéntica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / CONCLUSIÓN -->
+        <footer class="bg-gray-100 p-8 text-center border-t border-gray-200">
+            <h3 class="font-bold text-brand-dark mb-2 text-lg">Importancia del Proyecto</h3>
+            <p class="text-sm text-gray-600 max-w-2xl mx-auto italic">
+                "La construcción de este pipeline NLP no solo automatiza el análisis lingüístico avanzado, sino que garantiza precisión a través de la integración de estándares (EAGLES) y un código estructurado, escalable para entornos web y cloud."
+            </p>
+            <div class="mt-6 pt-6 border-t border-gray-300/50 flex flex-wrap justify-center gap-3 text-xs text-gray-500 uppercase font-semibold tracking-wider">
+                <span>Atayunpanqui Sanz N. M.</span> •
+                <span>Ochoa Martinez D. G.</span> •
+                <span>Machaca Huillca E.</span>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
